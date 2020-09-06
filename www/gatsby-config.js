@@ -114,7 +114,14 @@ const plugins = [
   },
   `gatsby-plugin-sitemap`,
   `gatsby-plugin-robots-txt`,
-
+  {
+    resolve: `gatsby-plugin-channel`,
+    options: {
+      channelPluginSettings: {
+        pluginKey: '24ca4cec-445e-4c1f-aef1-8ebb090c1e34',
+      },
+    },
+  },
   // {
   //   resolve: 'gatsby-plugin-mailchimp',
   //   options: {
