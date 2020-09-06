@@ -35,6 +35,37 @@ const siteMetadata = {
 
 const plugins = [
   {
+    resolve: 'gatsby-plugin-google-tagmanager',
+    options: {
+      id: 'GTM-WZKHHMR',
+
+      // Include GTM in development.
+      // Defaults to false meaning GTM will only be loaded in production.
+      includeInDevelopment: false,
+
+      // datalayer to be set before GTM is loaded
+      // should be an object or a function that is executed in the browser
+      // Defaults to null
+      defaultDataLayer: { platform: 'gatsby' },
+
+      // Specify optional GTM environment details.
+      // gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING",
+      // gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME",
+      // dataLayerName: "YOUR_DATA_LAYER_NAME",
+    },
+  },
+  {
+    resolve: `gatsby-plugin-gtag`,
+    options: {
+      // your google analytics tracking id
+      trackingId: `G-P1WTZGD1ZS`,
+      // Puts tracking script in the head instead of the body
+      head: true,
+      // enable ip anonymization
+      anonymize: false,
+    },
+  },
+  {
     resolve: '@pil0t/gatsby-theme-novela-dolim',
     options: {
       // contentPosts: "content/posts",
@@ -83,37 +114,7 @@ const plugins = [
   },
   `gatsby-plugin-sitemap`,
   `gatsby-plugin-robots-txt`,
-  {
-    resolve: 'gatsby-plugin-google-tagmanager',
-    options: {
-      id: 'GTM-WZKHHMR',
 
-      // Include GTM in development.
-      // Defaults to false meaning GTM will only be loaded in production.
-      includeInDevelopment: false,
-
-      // datalayer to be set before GTM is loaded
-      // should be an object or a function that is executed in the browser
-      // Defaults to null
-      defaultDataLayer: { platform: 'gatsby' },
-
-      // Specify optional GTM environment details.
-      // gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING",
-      // gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME",
-      // dataLayerName: "YOUR_DATA_LAYER_NAME",
-    },
-  },
-  {
-    resolve: `gatsby-plugin-gtag`,
-    options: {
-      // your google analytics tracking id
-      trackingId: `G-P1WTZGD1ZS`,
-      // Puts tracking script in the head instead of the body
-      head: true,
-      // enable ip anonymization
-      anonymize: false,
-    },
-  },
   // {
   //   resolve: 'gatsby-plugin-mailchimp',
   //   options: {
