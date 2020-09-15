@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: dolim.kr
+Token: c45c7d1e006a93ed2d0dbbd0fcfbab4036aa7c2665ecb89aea06267fdcf52ddd
